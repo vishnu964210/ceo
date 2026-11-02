@@ -1,11 +1,3 @@
-Claude
-
-
-
-
-
-
-Style · CSS
 /* =====================================================
    LPV SUMANTH — COMPLETE STYLESHEET (single file)
    Merged in cascade order: base → premium effects → overrides → additions
@@ -2657,6 +2649,684 @@ body {
     #philosophy .initiative * {
         transition: none !important;
     }
+}
+
+/* =====================================================
+   FINAL RESPONSIVE MASTER OVERRIDE
+   Desktop • Laptop • Tablet • Mobile
+===================================================== */
+
+/* Prevent horizontal overflow */
+html {
+    width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+/* Better section spacing */
+.section {
+    padding-block: clamp(60px, 8vw, 105px);
+}
+
+.section-heading {
+    margin-bottom: clamp(25px, 4vw, 45px);
+}
+
+.section-heading h2,
+.about-content h2,
+.contact-copy h2,
+.vision-box h2,
+.company-cta h2 {
+    font-size: clamp(1.8rem, 4vw, 3.4rem);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    padding: 8px 0;
+}
+
+.nav-inner {
+    width: min(1400px, calc(100% - 48px));
+    min-height: 70px;
+    height: auto;
+    margin-inline: auto;
+}
+
+.brand {
+    min-width: 0;
+}
+
+.brand img {
+    width: clamp(110px, 12vw, 150px);
+    height: auto;
+    max-height: 55px;
+    object-fit: contain;
+}
+
+.nav-links {
+    gap: clamp(12px, 2vw, 25px);
+}
+
+.nav-links a {
+    white-space: nowrap;
+}
+
+/* Keep the Connect button visually separate */
+.nav-links .nav-cta {
+    padding: 10px 18px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: min(740px, 100svh);
+    padding: clamp(115px, 13vw, 155px) 0 75px;
+}
+
+.hero-grid {
+    grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(260px, 0.8fr);
+    gap: clamp(25px, 5vw, 65px);
+}
+
+.hero-grid > * {
+    min-width: 0;
+}
+
+.hero h1 {
+    font-size: clamp(2.7rem, 6.5vw, 5.8rem);
+    letter-spacing: clamp(-3px, -0.25vw, -1px);
+    overflow-wrap: break-word;
+}
+
+.hero-role {
+    max-width: 100%;
+}
+
+.hero-copy {
+    max-width: 590px;
+    font-size: clamp(.9rem, 1.2vw, 1rem);
+}
+
+.hero-tagline {
+    font-size: clamp(.8rem, 1.3vw, 1rem);
+    overflow-wrap: anywhere;
+}
+
+.hero-actions {
+    gap: 12px;
+}
+
+.btn {
+    min-height: 46px;
+}
+
+/* ================= PORTRAIT ================= */
+
+.portrait-area {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+}
+
+.portrait-frame {
+    width: min(360px, 100%);
+    aspect-ratio: 4 / 5;
+    height: auto;
+}
+
+.portrait-content {
+    width: 100%;
+    height: 100%;
+}
+
+.portrait-initials img,
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid {
+    grid-template-columns:
+        minmax(0, .85fr)
+        minmax(0, 1.15fr);
+    gap: clamp(25px, 5vw, 60px);
+}
+
+.about-grid > * {
+    min-width: 0;
+}
+
+.about-panel {
+    padding: clamp(20px, 3vw, 30px);
+}
+
+/* ================= EXPERTISE ================= */
+
+.card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 20px);
+}
+
+.expertise-card,
+.focus-card {
+    min-width: 0;
+    padding: clamp(18px, 2.5vw, 28px);
+}
+
+.expertise-card h3,
+.focus-card h3,
+.expertise-card p,
+.focus-card p {
+    overflow-wrap: anywhere;
+}
+
+/* ================= VISION ================= */
+
+#vision .vision-box {
+    width: 100%;
+    padding: clamp(22px, 5vw, 50px);
+}
+
+#vision .vision-box h2 {
+    max-width: 790px;
+}
+
+#vision .vision-box > p:not(.eyebrow) {
+    max-width: 700px;
+}
+
+/* ================= PHILOSOPHY ================= */
+
+#philosophy .initiative-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 18px);
+}
+
+#philosophy .initiative {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    min-height: 100px;
+    margin: 0;
+    padding: clamp(17px, 2.5vw, 27px);
+}
+
+#philosophy .initiative h3 {
+    font-size: clamp(.9rem, 1.3vw, 1.05rem);
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#philosophy .initiative-arrow {
+    justify-self: end;
+}
+
+/* ================= PRINCIPLES ================= */
+
+.principle-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.principle {
+    min-width: 0;
+}
+
+/* ================= COMPANY ================= */
+
+.company-strip {
+    padding: clamp(24px, 4vw, 35px) 20px;
+}
+
+.company-inner {
+    width: 100%;
+    gap: clamp(18px, 3vw, 32px);
+}
+
+.company-inner img {
+    width: auto;
+    max-width: min(260px, 80vw);
+    max-height: 70px;
+    object-fit: contain;
+}
+
+.company-cta {
+    padding: clamp(35px, 6vw, 65px) 20px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(20px, 4vw, 40px);
+}
+
+.contact-grid > * {
+    min-width: 0;
+}
+
+.contact-links {
+    width: 100%;
+    min-width: 0;
+}
+
+.contact-links .contact-link,
+.contact-links .link-card {
+    min-width: 0;
+}
+
+.contact-links strong,
+.contact-links span {
+    overflow-wrap: anywhere;
+}
+
+/* ================= FOOTER ================= */
+
+.footer-inner {
+    gap: 15px;
+}
+
+.footer-inner p {
+    overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .hero-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(220px, .75fr);
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.7rem, 6vw, 4.5rem);
+    }
+
+    .about-grid {
+        gap: 25px;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: .78rem;
+    }
+
+}
+
+/* =====================================================
+   MOBILE NAVIGATION + TABLET
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 8px 0;
+        background: rgba(8, 11, 18, .94);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    .nav-inner {
+        width: calc(100% - 32px);
+        min-height: 54px;
+    }
+
+    .brand img {
+        width: 115px;
+        max-height: 45px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 42px;
+        min-height: 42px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 12px 20px 22px;
+        background: rgba(7, 13, 25, .98);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        margin: 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 12px 5px;
+        font-size: .9rem;
+    }
+
+    .nav-links a::after {
+        bottom: 5px;
+        width: 45px;
+    }
+
+    .nav-links .nav-cta {
+        width: 100%;
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 115px 0 55px;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    .hero-grid > * {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4.6rem);
+        letter-spacing: -2px;
+    }
+
+    .hero-role {
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .portrait-area {
+        min-height: 0;
+        padding: 10px 0 20px;
+    }
+
+    .portrait-frame {
+        width: min(310px, 82vw);
+    }
+
+    .section {
+        padding-block: 68px;
+    }
+
+    .about-panel {
+        order: 2;
+    }
+
+    .vision-box {
+        padding: 28px 22px;
+    }
+
+    .initiative {
+        grid-template-columns: 38px minmax(0, 1fr);
+    }
+
+    #philosophy .initiative-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #philosophy .initiative {
+        grid-template-columns: 38px minmax(0, 1fr) auto;
+        min-height: 88px;
+    }
+
+    .principle-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .company-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .company-inner img {
+        max-width: 190px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .section {
+        padding-block: 58px;
+    }
+
+    .section-heading h2,
+    .about-content h2,
+    .contact-copy h2,
+    .vision-box h2,
+    .company-cta h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: -1px;
+    }
+
+    .eyebrow {
+        font-size: .68rem;
+        letter-spacing: 1.8px;
+    }
+
+    .hero {
+        padding-top: 105px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.55rem, 13vw, 3.7rem);
+        letter-spacing: -1.8px;
+    }
+
+    .hero-role {
+        padding: 10px 12px;
+        font-size: .82rem;
+    }
+
+    .hero-copy {
+        font-size: .9rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .portrait-frame {
+        width: min(285px, 82vw);
+        border-radius: 22px;
+    }
+
+    .about-panel {
+        padding: 20px;
+    }
+
+    .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .expertise-card,
+    .focus-card {
+        padding: 22px;
+    }
+
+    #vision .vision-box {
+        padding: 24px 18px;
+    }
+
+    #philosophy .initiative {
+        grid-template-columns: 32px minmax(0, 1fr);
+        gap: 12px;
+        padding: 17px;
+    }
+
+    #philosophy .initiative-arrow {
+        display: none;
+    }
+
+    #philosophy .initiative-number {
+        font-size: 1.05rem;
+    }
+
+    #philosophy .initiative h3 {
+        font-size: .9rem;
+    }
+
+    .contact-links .contact-link,
+    .contact-links .link-card {
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .company-cta {
+        padding: 35px 17px;
+    }
+
+}
+
+/* =====================================================
+   EXTRA SMALL DEVICES
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: calc(100% - 26px);
+    }
+
+    .hero h1 {
+        font-size: 2.45rem;
+    }
+
+    .availability {
+        font-size: .66rem;
+        padding: 7px 10px;
+    }
+
+    .hero-role {
+        font-size: .76rem;
+    }
+
+    .portrait-frame {
+        width: min(260px, 82vw);
+    }
+
+    .contact-links .contact-link,
+    .contact-links .link-card {
+        padding: 13px;
+    }
+
+}
+
+/* =====================================================
+   ACCESSIBILITY + TOUCH DEVICES
+===================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .expertise-card:hover,
+    .focus-card:hover,
+    .about-card:hover {
+        transform: translateY(-6px);
+    }
+
+}
+
+@media (hover: none) {
+
+    .initiative:hover,
+    .expertise-card:hover,
+    .focus-card:hover {
+        transform: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+
 }
 
 
